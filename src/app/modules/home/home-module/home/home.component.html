@@ -1,0 +1,184 @@
+<!-- <mat-toolbar class="mat-elevation-z8">
+    <button mat-icon-button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()">
+        <mat-icon *ngIf="!sidenav.opened">
+            menu
+        </mat-icon>
+        <mat-icon *ngIf="sidenav.opened">
+            close
+        </mat-icon>
+    </button> -->
+
+<!-- <div class="row">
+        <div class="col-lg-8">
+            <div class="">
+                <h2>SANTHIYAGU</h2>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="">
+                <button id="logout" type="button" class="btn btn-primary " (click)='logOut()'>Log
+                    out</button>
+            </div>
+        </div>
+    </div> -->
+<nav class="navbar navbar-expand-lg navbar-dar " style="background-color: #004A9F;">
+    <div class="container-fluid">
+        <h1 id="h1">SANTHIYAGU</h1>
+        <button *ngIf="sidenav.mode === 'over'" (click)="sidenav.toggle()" class="navbar-toggler" type="button"
+            data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="col-lg-2">
+            <div class="">
+                <button id="logout" type="button" class="btn btn-primary " (click)='logOut()'>Log
+                    out</button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- </mat-toolbar> -->
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav="matSidenav" class="mat-elevation-z8">
+
+        <!-- <img class="avatar mat-elevation-z8" src="https://source.unsplash.com/c_GmwfHBDzk/200x200" /> -->
+        <!-- <mat-divider></mat-divider> -->
+        <!-- <h4 class="name">John Smith</h4> -->
+
+        <!-- <button mat-button class="menu-button">
+        <mat-icon>home</mat-icon>
+        <span>Home</span>
+      </button> -->
+
+        <nav id="sidebar" style="overflow: hidden !important;">
+            <ul class="list-unstyled components">
+                <li> <a routerLink="dashboard" data-toggle="collapse" aria-expanded="" class="">
+                        <mat-icon>home</mat-icon> <span>Home</span>
+                    </a>
+
+                </li>
+                <li> <a (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" data-toggle="collapse"
+                        aria-expanded="" class="dropdown-toggle">
+                        <mat-icon>person</mat-icon> <span>Admin</span>
+                    </a>
+                    <ul class="list-unstyled" #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
+                        <li> <a routerLink="user">User</a> </li>
+                        <!-- <li> <a routerLink="#">User List</a> </li> -->
+                        <li> <a routerLink="createarea">Create Area</a>
+                        </li>
+                        <li> <a routerLink="createroute">Create route</a> </li>
+                        <li> <a routerLink="routeoverview">Route overview</a> </li>
+                        <li> <a routerLink="dayend">Dayend</a> </li>
+                    </ul>
+                </li>
+
+
+                <li> <a (click)="collapse1.toggle()" [attr.aria-expanded]="!isCollapsed1" data-toggle="collapse"
+                        aria-expanded="" class="dropdown-toggle">
+                        <mat-icon>shopping_cart</mat-icon> <span>Item</span>
+                    </a>
+                    <ul class="list-unstyled" #collapse1="ngbCollapse" [(ngbCollapse)]="isCollapsed1">
+                        <li> <a routerLink="createitem">Create Item</a> </li>
+                        <li> <a routerLink="itemlist">Item List</a> </li>
+
+                    </ul>
+                </li>
+                <li> <a (click)="collapse2.toggle()" [attr.aria-expanded]="!isCollapsed2" data-toggle="collapse"
+                        aria-expanded="" class="dropdown-toggle">
+                        <mat-icon>supervised_user_circle</mat-icon> <span>Vender</span>
+                    </a>
+                    <ul class="list-unstyled" #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
+                        <li> <a routerLink="createvender">Create Vender</a> </li>
+                        <li> <a routerLink="venderlist">Vender List</a> </li>
+
+                    </ul>
+                </li>
+                <li> <a (click)="collapse3.toggle()" [attr.aria-expanded]="!isCollapsed3" data-toggle="collapse"
+                        aria-expanded="" class="dropdown-toggle">
+                        <mat-icon>shopping_basket</mat-icon> <span>Purchase</span>
+                    </a>
+                    <ul class="list-unstyled" #collapse3="ngbCollapse" [(ngbCollapse)]="isCollapsed3">
+                        <li> <a routerLink="purchaseorder">Purchase order</a> </li>
+                        <li> <a routerLink="warehousein">Warehouse in item</a> </li>
+                        <li> <a routerLink="payment">Payment</a> </li>
+                    </ul>
+                </li>
+                <li> <a (click)="collapse4.toggle()" [attr.aria-expanded]="!isCollapsed4" data-toggle="collapse"
+                        aria-expanded="" class="dropdown-toggle">
+                        <mat-icon>swap_horiz</mat-icon> <span>Load/Unload</span>
+                    </a>
+                    <ul class="list-unstyled" #collapse4="ngbCollapse" [(ngbCollapse)]="isCollapsed4">
+                        <li> <a routerLink="loading">Loading</a> </li>
+                        <li> <a routerLink="unloading">Unloading</a> </li>
+
+                    </ul>
+                </li>
+                <li> <a (click)="collapse5.toggle()" [attr.aria-expanded]="!isCollapsed5" data-toggle="collapse"
+                        aria-expanded="" class="dropdown-toggle">
+                        <mat-icon>supervised_user_circle</mat-icon> <span>Customer</span>
+                    </a>
+                    <ul class="list-unstyled" #collapse5="ngbCollapse" [(ngbCollapse)]="isCollapsed5">
+                        <li> <a routerLink="createcustomer">Create Customer</a> </li>
+                        <li> <a routerLink="customerlist">Customer list</a> </li>
+
+                    </ul>
+                </li>
+                <li> <a (click)="collapse6.toggle()" [attr.aria-expanded]="!isCollapsed6" data-toggle="collapse"
+                        aria-expanded="" class="dropdown-toggle">
+                        <mat-icon>add_shopping_cart</mat-icon> <span>Sales</span>
+                    </a>
+                    <ul class="list-unstyled" #collapse6="ngbCollapse" [(ngbCollapse)]="isCollapsed6">
+                        <li> <a routerLink="salesorder">Sales order</a> </li>
+                        <li> <a routerLink="invoice">Invoice</a> </li>
+                        <li> <a routerLink="receivepayment">Receive payment</a> </li>
+                        <li> <a routerLink="return">Return</a> </li>
+                        <li> <a routerLink="returnunload">Return unload</a> </li>
+                    </ul>
+                </li>
+                <li> <a (click)="collapse7.toggle()" [attr.aria-expanded]="!isCollapsed7" data-toggle="collapse"
+                        aria-expanded="" class="dropdown-toggle">
+                        <mat-icon>trending_up</mat-icon> <span>Reports</span>
+                    </a>
+                    <ul class="list-unstyled" #collapse7="ngbCollapse" [(ngbCollapse)]="isCollapsed7">
+                        <li> <a routerLink="#">Purchasing-FG</a> </li>
+                        <li> <a routerLink="#">Inventory Reports</a> </li>
+                        <li> <a routerLink="#">Sales Report</a> </li>
+                        <li> <a routerLink="#">Customers & Receivable</a> </li>
+                        <li> <a routerLink="#">Financial</a> </li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+
+
+        <!-- <mat-divider></mat-divider> -->
+
+
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+        <div class="">
+
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+<nav class="navbar navbar-expand-lg navbar-dar bg-dark ">
+    <div class="container-fluid">
+        <div class="me-md-auto text-center text-md-start">
+            <div class="copyright" id="h11">
+                &copy; Copyright <strong><span>FAF SOLUTIONS</span></strong>. All Rights Reserved
+            </div>
+            <br>
+            <div class="credits" id="h11">
+                Designed by <a href="">FAFDEV</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<!-- <p>home works!</p>
+<a routerLink="home/user">user</a>
+<router-outlet></router-outlet> -->
